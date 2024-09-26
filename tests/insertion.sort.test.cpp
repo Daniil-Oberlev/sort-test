@@ -1,7 +1,8 @@
 #include "../include/insertion.sort.h"
 #include "../lib/catch2/catch.hpp"
+#include <vector>
 
-TEST_CASE("Тесты сортировки вставками") {
+TEST_CASE("Тесты для сортировки вставками") {
   int N = 5;
 
   SECTION("Массив целых чисел по возрастанию") {
@@ -12,12 +13,9 @@ TEST_CASE("Тесты сортировки вставками") {
     }
   }
 
-  SECTION("Пустой массив целых чисел по возрастанию") {
-    int Array2[5] = {};
-    insertionSort(Array2, N);
-    for (int i = 0; i < N - 1; i++) {
-      REQUIRE(Array2[i] <= Array2[i + 1]);
-    }
+  SECTION("Пустой массив целых чисел") {
+    int Array2[0] = {};
+    insertionSort(Array2, 0);
   }
 
   SECTION("Массив чисел с плавающей запятой по возрастанию") {
@@ -41,6 +39,59 @@ TEST_CASE("Тесты сортировки вставками") {
     insertionSort(Array3, N, false);
     for (int i = 0; i < N - 1; i++) {
       REQUIRE(Array3[i] >= Array3[i + 1]);
+    }
+  }
+
+  SECTION("Массив из одного элемента") {
+    int Array[1] = {42};
+    insertionSort(Array, 1);
+    REQUIRE(Array[0] == 42);
+  }
+
+  SECTION("Массив с дубликатами по возрастанию") {
+    int Array[5] = {5, 3, 5, 1, 3};
+    insertionSort(Array, N);
+    for (int i = 0; i < N - 1; i++) {
+      REQUIRE(Array[i] <= Array[i + 1]);
+    }
+  }
+
+  SECTION("Массив с уже отсортированными элементами по возрастанию") {
+    int Array[5] = {1, 2, 3, 4, 5};
+    insertionSort(Array, N);
+    for (int i = 0; i < N - 1; i++) {
+      REQUIRE(Array[i] <= Array[i + 1]);
+    }
+  }
+
+  SECTION("Массив с одинаковыми элементами") {
+    int Array[5] = {5, 5, 5, 5, 5};
+    insertionSort(Array, N);
+    for (int i = 0; i < N - 1; i++) {
+      REQUIRE(Array[i] == Array[i + 1]);
+    }
+  }
+
+  SECTION("Массив с отрицательными числами по возрастанию") {
+    int Array[5] = {-3, -1, -7, -5, -2};
+    insertionSort(Array, N);
+    for (int i = 0; i < N - 1; i++) {
+      REQUIRE(Array[i] <= Array[i + 1]);
+    }
+  }
+
+  SECTION("Очень большой массив по возрастанию") {
+    int largeN = 100000;
+    std::vector<int> LargeArray(largeN);
+
+    for (int i = 0; i < largeN; ++i) {
+      LargeArray[i] = largeN - i;
+    }
+
+    insertionSort(LargeArray.data(), largeN);
+
+    for (int i = 0; i < largeN - 1; i++) {
+      REQUIRE(LargeArray[i] <= LargeArray[i + 1]);
     }
   }
 }

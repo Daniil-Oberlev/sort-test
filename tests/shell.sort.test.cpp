@@ -1,7 +1,8 @@
 #include "../include/shell.sort.h"
 #include "../lib/catch2/catch.hpp"
+#include <vector>
 
-TEST_CASE("Тесты сортировки Шелла") {
+TEST_CASE("Тесты для сортировки Шелла") {
   int N = 5;
 
   SECTION("Массив целых чисел по возрастанию") {
@@ -12,12 +13,9 @@ TEST_CASE("Тесты сортировки Шелла") {
     }
   }
 
-  SECTION("Пустой массив целых чисел по возрастанию") {
-    int Array2[5] = {};
-    shellSort(Array2, N);
-    for (int i = 0; i < N - 1; i++) {
-      REQUIRE(Array2[i] <= Array2[i + 1]);
-    }
+  SECTION("Пустой массив целых чисел") {
+    int Array2[0] = {};
+    shellSort(Array2, 0);
   }
 
   SECTION("Массив чисел с плавающей запятой по возрастанию") {
@@ -55,6 +53,45 @@ TEST_CASE("Тесты сортировки Шелла") {
     shellSort(Array, N);
     for (int i = 0; i < N - 1; i++) {
       REQUIRE(Array[i] <= Array[i + 1]);
+    }
+  }
+
+  SECTION("Массив с уже отсортированными элементами по возрастанию") {
+    int Array[5] = {1, 2, 3, 4, 5};
+    shellSort(Array, N);
+    for (int i = 0; i < N - 1; i++) {
+      REQUIRE(Array[i] <= Array[i + 1]);
+    }
+  }
+
+  SECTION("Массив с одинаковыми элементами") {
+    int Array[5] = {5, 5, 5, 5, 5};
+    shellSort(Array, N);
+    for (int i = 0; i < N - 1; i++) {
+      REQUIRE(Array[i] == Array[i + 1]);
+    }
+  }
+
+  SECTION("Массив с отрицательными числами по возрастанию") {
+    int Array[5] = {-3, -1, -7, -5, -2};
+    shellSort(Array, N);
+    for (int i = 0; i < N - 1; i++) {
+      REQUIRE(Array[i] <= Array[i + 1]);
+    }
+  }
+
+  SECTION("Очень большой массив по возрастанию") {
+    int largeN = 100000;
+    std::vector<int> LargeArray(largeN);
+
+    for (int i = 0; i < largeN; ++i) {
+      LargeArray[i] = largeN - i;
+    }
+
+    shellSort(LargeArray.data(), largeN);
+
+    for (int i = 0; i < largeN - 1; i++) {
+      REQUIRE(LargeArray[i] <= LargeArray[i + 1]);
     }
   }
 }

@@ -1,5 +1,6 @@
 .vscode/
-.github
+.DS_Store
+.github/
 .clang-format
 
 docs/
@@ -12,6 +13,7 @@ README.md
 tools/
 shell.nix
 .nixignore
+.editorconfig
 
 test
 *.log

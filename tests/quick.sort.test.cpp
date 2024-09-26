@@ -14,11 +14,8 @@ TEST_CASE("Тесты быстрой сортировки") {
   }
 
   SECTION("Пустой массив целых чисел по возрастанию") {
-    int Array2[5] = {};
-    quickSort(Array2, 0, N - 1);
-    for (int i = 0; i < N - 1; i++) {
-      REQUIRE(Array2[i] <= Array2[i + 1]);
-    }
+    int Array2[0] = {};
+    quickSort(Array2, 0, 0);
   }
 
   SECTION("Массив чисел с плавающей запятой по возрастанию") {

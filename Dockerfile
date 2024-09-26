@@ -1,15 +1,12 @@
-FROM gcc:latest
+FROM gcc:12.2.0
 
 WORKDIR /app
 
-# Копируем все файлы в контейнер
 COPY . .
 
-# Устанавливаем необходимые пакеты для сборки
 RUN apt-get update && apt-get install -y \
     clang \
     make \
-    && rm -rf /var/lib/apt/lists/*
-
-# Компилируем и запускаем тесты
-RUN make test
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean \
+    && if [ -f Makefile ]; then make test; else echo "Makefile not found"; fi
