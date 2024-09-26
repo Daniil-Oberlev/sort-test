@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Nix
+        uses: cachix/install-nix-action@v14
+        with:
+          nix-path: nixpkgs=channel:nixos-unstable
+
+      - name: Run tests
+        run: |
+          nix-shell --run "make test"
+
+      - name: Run check_comments script
+        run: |
+          nix-shell --run "
+            chmod +x ./tools/check_comments.pl &&
+            perl tools/check_comments.pl
+          "
+
+      - name: Execute test.sh script
+        run: |
+          nix-shell --run "
+            chmod +x ./tools/test.sh &&
+            ./tools/test.sh
+          "
+
+      - name: Format code
+        run: |
+          nix-shell --run "./tools/format.sh"

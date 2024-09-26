@@ -1,0 +1,17 @@
+.vscode/
+.github
+.clang-format
+
+docs/
+LICENSE
+README.md
+
+.git/
+.gitignore
+
+tools/
+shell.nix
+.nixignore
+
+test
+*.log
