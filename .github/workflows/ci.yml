@@ -28,6 +28,8 @@ jobs:
           nix-shell --run "make test"
 
       - name: Run check_comments script
+        env:
+          NIX_PATH: nixpkgs=channel:nixos-unstable
         run: |
           nix-shell --run "
             chmod +x ./tools/check_comments.pl &&
@@ -35,6 +37,8 @@ jobs:
           "
 
       - name: Execute test.sh script
+        env:
+          NIX_PATH: nixpkgs=channel:nixos-unstable
         run: |
           nix-shell --run "
             chmod +x ./tools/test.sh &&
@@ -42,5 +46,7 @@ jobs:
           "
 
       - name: Format code
+        env:
+          NIX_PATH: nixpkgs=channel:nixos-unstable
         run: |
           nix-shell --run "./tools/format.sh"
