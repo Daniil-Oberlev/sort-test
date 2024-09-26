@@ -1,3 +1,5 @@
+#include <algorithm>
+
 template <typename T> int partition(T *arr, int low, int high, bool ascending) {
   T pivot = arr[high];
   int i = low - 1;

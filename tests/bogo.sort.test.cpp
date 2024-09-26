@@ -1,5 +1,5 @@
 #include "../include/bogo.sort.h"
-#include "./catch2/catch.hpp"
+#include "../lib/catch2/catch.hpp"
 
 TEST_CASE("Тесты BogoSort") {
   int N = 5;
@@ -15,8 +15,7 @@ TEST_CASE("Тесты BogoSort") {
   SECTION("Пустой массив целых чисел") {
     int Array2[0] = {};
     bogoSort(Array2, 0);
-    // Тестирование пустого массива
-    REQUIRE(true); // Пустой массив считается отсортированным
+    REQUIRE(true);
   }
 
   SECTION("Массив чисел с плавающей запятой") {

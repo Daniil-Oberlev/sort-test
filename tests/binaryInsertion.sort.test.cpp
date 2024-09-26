@@ -1,5 +1,5 @@
 #include "../include/binaryInsertion.sort.h"
-#include "./catch2/catch.hpp"
+#include "../lib/catch2/catch.hpp"
 
 TEST_CASE("Тесты бинарной сортировки вставками") {
   int N = 5;

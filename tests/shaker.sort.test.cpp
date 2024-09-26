@@ -1,5 +1,5 @@
 #include "../include/shaker.sort.h"
-#include "./catch2/catch.hpp"
+#include "../lib/catch2/catch.hpp"
 
 TEST_CASE("Тесты сортировки шейкером") {
   int N = 5;

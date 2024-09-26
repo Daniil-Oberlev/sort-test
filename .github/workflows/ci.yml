@@ -19,7 +19,7 @@ jobs:
       - name: Set up Nix
         uses: cachix/install-nix-action@v14
         with:
-          nix-path: nixpkgs=channel:nixos-unstable
+          nix-path: nixpkgs=channel:nixos-21.11
 
       - name: Run tests
         run: |

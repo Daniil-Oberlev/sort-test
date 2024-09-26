@@ -1,5 +1,5 @@
 #include "../include/bubble.sort.h"
-#include "./catch2/catch.hpp"
+#include "../lib/catch2/catch.hpp"
 
 TEST_CASE("Тесты сортировки пузырьком") {
   int N = 5;
