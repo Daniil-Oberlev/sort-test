@@ -1,0 +1,54 @@
+\chapter{Документация по функции insertion\+Sort}
+\hypertarget{md_docs_2insertion_8sort}{}\label{md_docs_2insertion_8sort}\index{Документация по функции insertionSort@{Документация по функции insertionSort}}
+\label{md_docs_2insertion_8sort_autotoc_md30}%
+\Hypertarget{md_docs_2insertion_8sort_autotoc_md30}%
+\hypertarget{md_docs_2insertion_8sort_autotoc_md31}{}\doxysection{\texorpdfstring{Описание}{Описание}}\label{md_docs_2insertion_8sort_autotoc_md31}
+Функция {\ttfamily insertion\+Sort} сортирует массив с помощью алгоритма {\ttfamily сортировки вставками}.\hypertarget{md_docs_2insertion_8sort_autotoc_md32}{}\doxysection{\texorpdfstring{Шаблон функции}{Шаблон функции}}\label{md_docs_2insertion_8sort_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ insertionSort(T\ *arr,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{bool}\ ascending\ =\ \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2insertion_8sort_autotoc_md33}{}\doxysection{\texorpdfstring{Параметры}{Параметры}}\label{md_docs_2insertion_8sort_autotoc_md33}
+
+\begin{DoxyItemize}
+\item {\ttfamily arr\+:} Указатель на массив элементов типа {\ttfamily T}, который нужно отсортировать.
+\item {\ttfamily n\+:} Размер массива (количество элементов в массиве).
+\item {\ttfamily ascending\+:} Булевый параметр, указывающий порядок сортировки.
+\begin{DoxyItemize}
+\item Если {\ttfamily true} (по умолчанию), массив сортируется по возрастанию.
+\item Если {\ttfamily false}, массив сортируется по убыванию.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_docs_2insertion_8sort_autotoc_md34}{}\doxysection{\texorpdfstring{Пример использования}{Пример использования}}\label{md_docs_2insertion_8sort_autotoc_md34}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}insertion.sort.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ arr[]\ =\ \{64,\ 34,\ 25,\ 12,\ 22,\ 11,\ 90\};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{sizeof}(arr)/\textcolor{keyword}{sizeof}(arr[0]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Сортировка\ по\ возрастанию}}
+\DoxyCodeLine{\ \ \ \ insertionSort(arr,\ n,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Вывод\ отсортированного\ массива}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ arr[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2insertion_8sort_autotoc_md35}{}\doxysection{\texorpdfstring{Алгоритм работы}{Алгоритм работы}}\label{md_docs_2insertion_8sort_autotoc_md35}
+
+\begin{DoxyEnumerate}
+\item Начинает с первого элемента и рассматривает его как отсортированную часть.
+\item Каждый последующий элемент вставляется в правильную позицию в отсортированной части массива.
+\item Процесс продолжается до тех пор, пока все элементы не будут отсортированы.
+\end{DoxyEnumerate}\hypertarget{md_docs_2insertion_8sort_autotoc_md36}{}\doxysection{\texorpdfstring{Примечения}{Примечения}}\label{md_docs_2insertion_8sort_autotoc_md36}
+
+\begin{DoxyItemize}
+\item Алгоритм сортировки вставками эффективен для небольших массивов и почти отсортированных данных, но неэффективен для больших массивов.
+\item Обладает временной сложностью O(n\texorpdfstring{$^\wedge$}{\string^}2) в худшем случае, но O(n) в лучшем. 
+\end{DoxyItemize}

@@ -1,0 +1,55 @@
+\chapter{Документация по функции bubble\+Sort}
+\hypertarget{md_docs_2bubble_8sort}{}\label{md_docs_2bubble_8sort}\index{Документация по функции bubbleSort@{Документация по функции bubbleSort}}
+\label{md_docs_2bubble_8sort_autotoc_md16}%
+\Hypertarget{md_docs_2bubble_8sort_autotoc_md16}%
+\hypertarget{md_docs_2bubble_8sort_autotoc_md17}{}\doxysection{\texorpdfstring{Описание}{Описание}}\label{md_docs_2bubble_8sort_autotoc_md17}
+Функция {\ttfamily bubble\+Sort} сортирует массив с помощью алгоритма {\ttfamily пузырьковой сортировки}.\hypertarget{md_docs_2bubble_8sort_autotoc_md18}{}\doxysection{\texorpdfstring{Шаблон функции}{Шаблон функции}}\label{md_docs_2bubble_8sort_autotoc_md18}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ bubbleSort(T\ *arr,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{bool}\ ascending\ =\ \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2bubble_8sort_autotoc_md19}{}\doxysection{\texorpdfstring{Параметры}{Параметры}}\label{md_docs_2bubble_8sort_autotoc_md19}
+
+\begin{DoxyItemize}
+\item {\ttfamily arr\+:} Указатель на массив элементов типа {\ttfamily T}, который нужно отсортировать.
+\item {\ttfamily n\+:} Размер массива (количество элементов в массиве).
+\item {\ttfamily ascending\+:} Булевый параметр, указывающий порядок сортировки.
+\begin{DoxyItemize}
+\item Если {\ttfamily true} (по умолчанию), массив сортируется по возрастанию.
+\item Если {\ttfamily false}, массив сортируется по убыванию.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_docs_2bubble_8sort_autotoc_md20}{}\doxysection{\texorpdfstring{Пример использования}{Пример использования}}\label{md_docs_2bubble_8sort_autotoc_md20}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}bubble.sort.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ arr[]\ =\ \{64,\ 34,\ 25,\ 12,\ 22,\ 11,\ 90\};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{sizeof}(arr)/\textcolor{keyword}{sizeof}(arr[0]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Сортировка\ по\ возрастанию}}
+\DoxyCodeLine{\ \ \ \ bubbleSort(arr,\ n,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Вывод\ отсортированного\ массива}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ arr[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2bubble_8sort_autotoc_md21}{}\doxysection{\texorpdfstring{Алгоритм работы}{Алгоритм работы}}\label{md_docs_2bubble_8sort_autotoc_md21}
+
+\begin{DoxyEnumerate}
+\item Проходит по массиву и сравнивает соседние элементы.
+\item Если элементы находятся в неправильном порядке, они меняются местами.
+\item Если в ходе прохода не было никаких обменов (массив отсортирован), выполнение прерывается.
+\item Процесс продолжается до тех пор, пока массив не будет отсортирован.
+\end{DoxyEnumerate}\hypertarget{md_docs_2bubble_8sort_autotoc_md22}{}\doxysection{\texorpdfstring{Примечения}{Примечения}}\label{md_docs_2bubble_8sort_autotoc_md22}
+
+\begin{DoxyItemize}
+\item Алгоритм пузырьковой сортировки имеет ограниченную эффективность, особенно для больших массивов, и его средняя и худшая временные сложности составляют O(n²).
+\item Он может быть несколько более эффективным для почти отсортированных массивов благодаря возможности преждевременного завершения, если в ходе прохода не было обменов. 
+\end{DoxyItemize}

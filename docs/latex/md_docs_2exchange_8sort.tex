@@ -1,0 +1,54 @@
+\chapter{Документация по функции exchange\+Sort}
+\hypertarget{md_docs_2exchange_8sort}{}\label{md_docs_2exchange_8sort}\index{Документация по функции exchangeSort@{Документация по функции exchangeSort}}
+\label{md_docs_2exchange_8sort_autotoc_md23}%
+\Hypertarget{md_docs_2exchange_8sort_autotoc_md23}%
+\hypertarget{md_docs_2exchange_8sort_autotoc_md24}{}\doxysection{\texorpdfstring{Описание}{Описание}}\label{md_docs_2exchange_8sort_autotoc_md24}
+Функция {\ttfamily exchange\+Sort} сортирует массив с помощью алгоритма {\ttfamily сортировки обменом}.\hypertarget{md_docs_2exchange_8sort_autotoc_md25}{}\doxysection{\texorpdfstring{Шаблон функции}{Шаблон функции}}\label{md_docs_2exchange_8sort_autotoc_md25}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ exchangeSort(T\ *arr,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{bool}\ ascending\ =\ \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2exchange_8sort_autotoc_md26}{}\doxysection{\texorpdfstring{Параметры}{Параметры}}\label{md_docs_2exchange_8sort_autotoc_md26}
+
+\begin{DoxyItemize}
+\item {\ttfamily arr\+:} Указатель на массив элементов типа {\ttfamily T}, который нужно отсортировать.
+\item {\ttfamily n\+:} Размер массива (количество элементов в массиве).
+\item {\ttfamily ascending\+:} Булевый параметр, указывающий порядок сортировки.
+\begin{DoxyItemize}
+\item Если {\ttfamily true} (по умолчанию), массив сортируется по возрастанию.
+\item Если {\ttfamily false}, массив сортируется по убыванию.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_docs_2exchange_8sort_autotoc_md27}{}\doxysection{\texorpdfstring{Пример использования}{Пример использования}}\label{md_docs_2exchange_8sort_autotoc_md27}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}exchange.sort.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ arr[]\ =\ \{64,\ 34,\ 25,\ 12,\ 22,\ 11,\ 90\};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{sizeof}(arr)/\textcolor{keyword}{sizeof}(arr[0]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Сортировка\ по\ возрастанию}}
+\DoxyCodeLine{\ \ \ \ exchangeSort(arr,\ n,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Вывод\ отсортированного\ массива}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ arr[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2exchange_8sort_autotoc_md28}{}\doxysection{\texorpdfstring{Алгоритм работы}{Алгоритм работы}}\label{md_docs_2exchange_8sort_autotoc_md28}
+
+\begin{DoxyEnumerate}
+\item Проходит по массиву и сравнивает каждый элемент с остальными.
+\item Если элементы находятся в неправильном порядке, они меняются местами.
+\item Процесс повторяется, пока массив не будет отсортирован.
+\end{DoxyEnumerate}\hypertarget{md_docs_2exchange_8sort_autotoc_md29}{}\doxysection{\texorpdfstring{Примечения}{Примечения}}\label{md_docs_2exchange_8sort_autotoc_md29}
+
+\begin{DoxyItemize}
+\item Алгоритм {\ttfamily exchange\+Sort} неэффективен для больших массивов.
+\item Подходит для обучения или для небольших наборов данных. 
+\end{DoxyItemize}

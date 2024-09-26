@@ -1,0 +1,47 @@
+\doxysection{binary\+Insertion.\+sort.\+cpp}
+\hypertarget{binaryInsertion_8sort_8cpp_source}{}\label{binaryInsertion_8sort_8cpp_source}\index{src/binaryInsertion.sort.cpp@{src/binaryInsertion.sort.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00002\ \textcolor{keywordtype}{int}\ binarySearch(T\ *arr,\ T\ item,\ \textcolor{keywordtype}{int}\ low,\ \textcolor{keywordtype}{int}\ high,\ \textcolor{keywordtype}{bool}\ ascending\ =\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00003\ \ \ \textcolor{keywordflow}{if}\ (ascending)\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{while}\ (low\ <=\ high)\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mid\ =\ low\ +\ (high\ -\/\ low)\ /\ 2;}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[mid]\ ==\ item)}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mid\ +\ 1;}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (arr[mid]\ <\ item)}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ low\ =\ mid\ +\ 1;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ high\ =\ mid\ -\/\ 1;}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{while}\ (low\ <=\ high)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mid\ =\ low\ +\ (high\ -\/\ low)\ /\ 2;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[mid]\ ==\ item)}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mid\ +\ 1;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (arr[mid]\ >\ item)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ low\ =\ mid\ +\ 1;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ high\ =\ mid\ -\/\ 1;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordflow}{return}\ low;}
+\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ binaryInsertionSort(T\ *arr,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{bool}\ ascending\ =\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ T\ selected\ =\ arr[i];}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ i\ -\/\ 1;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ loc\ =\ binarySearch(arr,\ selected,\ 0,\ j,\ ascending);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ >=\ loc)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ arr[j\ +\ 1]\ =\ arr[j];}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ j-\/-\/;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ arr[j\ +\ 1]\ =\ selected;}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}

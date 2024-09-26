@@ -1,0 +1,12 @@
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "Sorting"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = src include docs
+FILE_PATTERNS          = *.c \
+                         *.h \
+                         *.cpp \
+                         *.md
+GENERATE_HTML          = YES
+GENERATE_LATEX         = YES
+MARKDOWN_SUPPORT      = YES
+ENABLED_SECTIONS      =

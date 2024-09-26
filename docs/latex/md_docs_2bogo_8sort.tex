@@ -1,0 +1,49 @@
+\chapter{Документация по функции bogo\+Sort}
+\hypertarget{md_docs_2bogo_8sort}{}\label{md_docs_2bogo_8sort}\index{Документация по функции bogoSort@{Документация по функции bogoSort}}
+\label{md_docs_2bogo_8sort_autotoc_md9}%
+\Hypertarget{md_docs_2bogo_8sort_autotoc_md9}%
+\hypertarget{md_docs_2bogo_8sort_autotoc_md10}{}\doxysection{\texorpdfstring{Описание}{Описание}}\label{md_docs_2bogo_8sort_autotoc_md10}
+Функция {\ttfamily bogo\+Sort} сортирует массив с использованием {\ttfamily вероятностного алгоритма}, который генерирует случайные перестановки элементов до тех пор, пока массив не окажется отсортированным.\hypertarget{md_docs_2bogo_8sort_autotoc_md11}{}\doxysection{\texorpdfstring{Шаблон функции}{Шаблон функции}}\label{md_docs_2bogo_8sort_autotoc_md11}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ bogoSort(T\ *arr,\ \textcolor{keywordtype}{int}\ n);}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2bogo_8sort_autotoc_md12}{}\doxysection{\texorpdfstring{Параметры}{Параметры}}\label{md_docs_2bogo_8sort_autotoc_md12}
+
+\begin{DoxyItemize}
+\item {\ttfamily arr\+:} Указатель на массив элементов типа {\ttfamily T}, который нужно отсортировать.
+\item {\ttfamily n\+:} Размер массива (количество элементов в массиве).
+\end{DoxyItemize}\hypertarget{md_docs_2bogo_8sort_autotoc_md13}{}\doxysection{\texorpdfstring{Пример использования}{Пример использования}}\label{md_docs_2bogo_8sort_autotoc_md13}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}bogo.sort.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ arr[]\ =\ \{3,\ 1,\ 4,\ 1,\ 5\};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{sizeof}(arr)/\textcolor{keyword}{sizeof}(arr[0]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Сортировка\ по\ возрастанию}}
+\DoxyCodeLine{\ \ \ \ bogoSort(arr,\ n);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Вывод\ отсортированного\ массива}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ arr[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2bogo_8sort_autotoc_md14}{}\doxysection{\texorpdfstring{Алгоритм работы}{Алгоритм работы}}\label{md_docs_2bogo_8sort_autotoc_md14}
+
+\begin{DoxyEnumerate}
+\item Генерирует случайные перестановки элементов массива.
+\item Проверяет, отсортирован ли массив.
+\item Повторяет процесс, пока массив не будет отсортирован.
+\end{DoxyEnumerate}\hypertarget{md_docs_2bogo_8sort_autotoc_md15}{}\doxysection{\texorpdfstring{Примечения}{Примечения}}\label{md_docs_2bogo_8sort_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Алгоритм Bogo\+Sort крайне неэффективен для больших массивов (средняя сложность O((n+1)!)).
+\item Используется в основном в образовательных целях для демонстрации вероятностных алгоритмов. 
+\end{DoxyItemize}

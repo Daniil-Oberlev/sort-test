@@ -1,0 +1,57 @@
+\chapter{Документация по функции quick\+Sort}
+\hypertarget{md_docs_2quick_8sort}{}\label{md_docs_2quick_8sort}\index{Документация по функции quickSort@{Документация по функции quickSort}}
+\label{md_docs_2quick_8sort_autotoc_md44}%
+\Hypertarget{md_docs_2quick_8sort_autotoc_md44}%
+\hypertarget{md_docs_2quick_8sort_autotoc_md45}{}\doxysection{\texorpdfstring{Описание}{Описание}}\label{md_docs_2quick_8sort_autotoc_md45}
+Функция {\ttfamily quick\+Sort} сортирует массив с помощью алгоритма {\ttfamily быстрой сортировки}.\hypertarget{md_docs_2quick_8sort_autotoc_md46}{}\doxysection{\texorpdfstring{Шаблон функции}{Шаблон функции}}\label{md_docs_2quick_8sort_autotoc_md46}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ quickSort(T\ *arr,\ \textcolor{keywordtype}{int}\ low,\ \textcolor{keywordtype}{int}\ high,\ \textcolor{keywordtype}{bool}\ ascending\ =\ \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2quick_8sort_autotoc_md47}{}\doxysection{\texorpdfstring{Параметры}{Параметры}}\label{md_docs_2quick_8sort_autotoc_md47}
+
+\begin{DoxyItemize}
+\item {\ttfamily arr\+:} Указатель на массив элементов типа {\ttfamily T}, который нужно отсортировать.
+\item {\ttfamily low\+:} Индекс начала части массива, которую нужно отсортировать.
+\item {\ttfamily high\+:} Индекс конца части массива, которую нужно отсортировать.
+\item {\ttfamily ascending\+:} Булевый параметр, указывающий порядок сортировки.
+\begin{DoxyItemize}
+\item Если {\ttfamily true} (по умолчанию), массив сортируется по возрастанию.
+\item Если {\ttfamily false}, массив сортируется по убыванию.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_docs_2quick_8sort_autotoc_md48}{}\doxysection{\texorpdfstring{Пример использования}{Пример использования}}\label{md_docs_2quick_8sort_autotoc_md48}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}quick.sort.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ arr[]\ =\ \{64,\ 34,\ 25,\ 12,\ 22,\ 11,\ 90\};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{sizeof}(arr)/\textcolor{keyword}{sizeof}(arr[0]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Сортировка\ по\ возрастанию}}
+\DoxyCodeLine{\ \ \ \ quickSort(arr,\ 0,\ n\ -\/\ 1,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Вывод\ отсортированного\ массива}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ arr[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_docs_2quick_8sort_autotoc_md49}{}\doxysection{\texorpdfstring{Алгоритм работы}{Алгоритм работы}}\label{md_docs_2quick_8sort_autotoc_md49}
+
+\begin{DoxyEnumerate}
+\item Выбирается опорный элемент (pivot), который делит массив на две части.
+\item Все элементы меньше опорного перемещаются в левую часть, а все элементы больше — в правую часть (если сортировка по возрастанию).
+\item Рекурсивно сортируются обе части массива.
+\item Процесс продолжается до тех пор, пока каждая часть не будет отсортирована.
+\end{DoxyEnumerate}\hypertarget{md_docs_2quick_8sort_autotoc_md50}{}\doxysection{\texorpdfstring{Примечения}{Примечения}}\label{md_docs_2quick_8sort_autotoc_md50}
+
+\begin{DoxyItemize}
+\item В качестве опорного элемента (pivot) может быть выбран не только последний элемент в текущем подмассиве, но и любой другой элемент.
+\item Алгоритм quick\+Sort имеет временную сложность O(n log n) в среднем и O(n²) в худшем случае, но в большинстве случаев работает быстрее пузырьковой сортировки.
+\item Оптимально использовать этот алгоритм для сортировки больших объемов данных, однако в определенных ситуациях его эффективность может снизиться. 
+\end{DoxyItemize}
