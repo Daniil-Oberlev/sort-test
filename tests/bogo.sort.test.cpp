@@ -1,6 +1,8 @@
 #include "../include/bogo.sort.h"
 #include "../lib/catch2/catch.hpp"
 #include <vector>
+/* comm */
+
 
 TEST_CASE("Тесты для Bogo сортировки") {
   int N = 5;
