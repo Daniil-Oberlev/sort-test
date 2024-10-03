@@ -7,5 +7,6 @@ pkgs.mkShell {
     pkgs.gdb             # Отладчик
     pkgs.catch2          # Catch2 для тестирования
     pkgs.perl            # Для выполнения Perl-скриптов
+    pkgs.benchmark       # Добавляем Google Benchmark
   ];
 }
