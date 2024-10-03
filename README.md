@@ -10,12 +10,6 @@
   <tr>
     <td align='center' width='110' height='90'>
       <a href='#tech-stack'>
-        <img src='https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg' width='36' height='36' alt='C'>
-      </a>
-      <br>C
-    </td>
-    <td align='center' width='110' height='90'>
-      <a href='#tech-stack'>
         <img src='https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg' width='36' height='36' alt='C++'>
       </a>
       <br>C++
@@ -80,15 +74,9 @@
   <tr>
     <td align='center' width='110' height='90'>
       <a href='#tech-stack'>
-        <img src='https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg' width='36' height='36' alt='HTML'>
+        <img src='https://www.svgrepo.com/show/373833/mdx.svg' width='36' height='36' alt='MDX'>
       </a>
-      <br>HTML
-    </td>
-    <td align='center' width='110' height='90'>
-      <a href='#tech-stack'>
-        <img src='https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg' width='36' height='36' alt='CSS'>
-      </a>
-      <br>CSS
+      <br>MDX
     </td>
   </tr>
 </table>
@@ -161,3 +149,5 @@ int main() {
 ## 🤝 Вклад в проект
 
 Если вы хотите внести свой вклад в проект, пожалуйста, создайте новый pull request или откройте issue для обсуждения изменений.
+
+[![codecov](https://codecov.io/gh/Daniil-Oberlev/sort-test/graph/badge.svg?token=ARS4LZ589I)](https://codecov.io/gh/Daniil-Oberlev/sort-test)
