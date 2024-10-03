@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['использования_0',['использования',['../md_docs_2binaryInsertion_8sort.html#autotoc_md4',1,'Пример использования'],['../md_docs_2bogo_8sort.html#autotoc_md13',1,'Пример использования'],['../md_docs_2bubble_8sort.html#autotoc_md20',1,'Пример использования'],['../md_docs_2exchange_8sort.html#autotoc_md27',1,'Пример использования'],['../md_docs_2insertion_8sort.html#autotoc_md34',1,'Пример использования'],['../md_docs_2optimizedBubble_8sort.html#autotoc_md41',1,'Пример использования'],['../md_docs_2quick_8sort.html#autotoc_md48',1,'Пример использования'],['../md_docs_2selection_8sort.html#autotoc_md55',1,'Пример использования'],['../md_docs_2shaker_8sort.html#autotoc_md62',1,'Пример использования'],['../md_docs_2shell_8sort.html#autotoc_md69',1,'Пример использования']]]
-];

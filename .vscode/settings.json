@@ -1,10 +1,7 @@
 {
-	"editor.tabSize": 2,
-	"editor.insertSpaces": true,
-	"editor.formatOnSave": true,
-	"files.autoSave": "onWindowChange",
-	"nixEnvSelector.nixFile": "shell.nix",
-	"nixEnvSelector.enableNix": true,
-	"ccls.cache.directory": ".ccls-cache",
-	"ccls.executable": "ccls"
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onWindowChange",
+  "nixEnvSelector.nixFile": "shell.nix"
 }
