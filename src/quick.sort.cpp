@@ -1,7 +1,7 @@
 #include <algorithm>
 
 template <typename T> int partition(T *arr, int low, int high, bool ascending) {
-  T pivot = arr[high];
+  T   pivot = arr[high];
   int i = low - 1;
 
   for (int j = low; j < high; ++j) {

@@ -81,7 +81,7 @@ TEST_CASE("Тесты для сортировки вставками") {
   }
 
   SECTION("Очень большой массив по возрастанию") {
-    int largeN = 100000;
+    int              largeN = 100000;
     std::vector<int> LargeArray(largeN);
 
     for (int i = 0; i < largeN; ++i) {

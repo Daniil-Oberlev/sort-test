@@ -1,7 +1,7 @@
 template <typename T> void shellSort(T *arr, int n, bool ascending = true) {
   for (int gap = n / 2; gap > 0; gap /= 2) {
     for (int i = gap; i < n; ++i) {
-      T temp = arr[i];
+      T   temp = arr[i];
       int j;
 
       if (ascending) {

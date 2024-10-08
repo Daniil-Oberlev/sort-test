@@ -12,8 +12,6 @@ void optimizedBubbleSort(T *arr, int n, bool ascending = true) {
         flag = true;
       }
     }
-    if (!flag) {
-      break;
-    }
+    if (!flag) { break; }
   }
 }

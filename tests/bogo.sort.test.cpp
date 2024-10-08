@@ -65,7 +65,7 @@ TEST_CASE("Тесты для Bogo сортировки") {
   }
 
   SECTION("Очень большой массив (осторожно, Bogo Sort может занять время)") {
-    int largeN = 6;
+    int              largeN = 6;
     std::vector<int> LargeArray(largeN);
 
     for (int i = 0; i < largeN; ++i) {

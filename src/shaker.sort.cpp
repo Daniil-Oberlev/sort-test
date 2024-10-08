@@ -1,7 +1,7 @@
 template <typename T> void shakerSort(T *arr, int n, bool ascending = true) {
   bool swapped = true;
-  int start = 0;
-  int end = n - 1;
+  int  start = 0;
+  int  end = n - 1;
 
   while (swapped) {
     swapped = false;
@@ -16,9 +16,7 @@ template <typename T> void shakerSort(T *arr, int n, bool ascending = true) {
       }
     }
 
-    if (!swapped) {
-      break;
-    }
+    if (!swapped) { break; }
 
     swapped = false;
     --end;

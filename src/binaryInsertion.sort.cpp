@@ -27,7 +27,7 @@ int binarySearch(T *arr, T item, int low, int high, bool ascending = true) {
 template <typename T>
 void binaryInsertionSort(T *arr, int n, bool ascending = true) {
   for (int i = 1; i < n; i++) {
-    T selected = arr[i];
+    T   selected = arr[i];
     int j = i - 1;
 
     int loc = binarySearch(arr, selected, 0, j, ascending);
