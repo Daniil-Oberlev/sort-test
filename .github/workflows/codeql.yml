@@ -28,9 +28,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: nix-shell --run "exit"
-
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
@@ -38,7 +35,8 @@ jobs:
         build-mode: ${{ matrix.build-mode }}
 
     - name: Run unit tests
-      run: make test
+      run: |
+        make test
 
     - name: Run CodeQL Analysis
       uses: github/codeql-action/analyze@v3
