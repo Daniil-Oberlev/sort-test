@@ -1,4 +1,4 @@
-# Документация по функции optimizedBubbleSort
+# Документация по функции `optimizedBubbleSort`
 
 ## Описание
 
