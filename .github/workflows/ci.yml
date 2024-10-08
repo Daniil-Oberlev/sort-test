@@ -16,37 +16,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Nix
-        uses: cachix/install-nix-action@v14
-        with:
-          nix-path: nixpkgs=channel:nixos-unstable
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang g++ make libbenchmark-dev
 
       - name: Run tests
-        env:
-          NIX_PATH: nixpkgs=channel:nixos-unstable
-        run: |
-          nix-shell --run "make test"
+        run: make test
 
       - name: Run check_comments script
-        env:
-          NIX_PATH: nixpkgs=channel:nixos-unstable
         run: |
-          nix-shell --run "
-            chmod +x ./tools/check_comments.pl &&
-            perl tools/check_comments.pl
-          "
+          chmod +x ./tools/check_comments.pl
+          perl tools/check_comments.pl
 
       - name: Execute test.sh script
-        env:
-          NIX_PATH: nixpkgs=channel:nixos-unstable
         run: |
-          nix-shell --run "
-            chmod +x ./tools/test.sh &&
-            ./tools/test.sh
-          "
+          chmod +x ./tools/test.sh
+          ./tools/test.sh
 
       - name: Format code
-        env:
-          NIX_PATH: nixpkgs=channel:nixos-unstable
-        run: |
-          nix-shell --run "./tools/format.sh"
+        run: ./tools/format.sh

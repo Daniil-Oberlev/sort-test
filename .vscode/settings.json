@@ -3,5 +3,8 @@
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "files.autoSave": "onWindowChange",
-  "nixEnvSelector.nixFile": "shell.nix"
+  "nixEnvSelector.nixFile": "shell.nix",
+  "files.associations": {
+    "vector": "cpp"
+  }
 }

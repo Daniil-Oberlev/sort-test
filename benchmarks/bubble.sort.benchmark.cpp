@@ -1,13 +1,5 @@
 #include "../src/bubble.sort.cpp"
-#include <benchmark/benchmark.h>
-
-std::vector<int> generateRandomVector(int size) {
-  std::vector<int> vec(size);
-  for (int &val : vec) {
-    val = rand() % 1000;
-  }
-  return vec;
-}
+#include "./benchmark_utils.h"
 
 static void BM_BubbleSortAscending(benchmark::State &state) {
   for (auto _ : state) {
@@ -25,5 +17,3 @@ static void BM_BubbleSortDescending(benchmark::State &state) {
 
 BENCHMARK(BM_BubbleSortAscending)->Range(8, 8 << 10);
 BENCHMARK(BM_BubbleSortDescending)->Range(8, 8 << 10);
-
-BENCHMARK_MAIN();

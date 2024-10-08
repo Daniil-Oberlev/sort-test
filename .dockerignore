@@ -9,6 +9,7 @@ README.md
 
 .git/
 .gitignore
+.gitattributes
 
 tools/
 shell.nix

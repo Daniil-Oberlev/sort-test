@@ -1,5 +1,5 @@
 #include "../include/bogo.sort.h"
-#include "../lib/catch2/catch.hpp"
+#include "../libs/catch2/catch.hpp"
 #include <vector>
 
 TEST_CASE("Тесты для Bogo сортировки") {

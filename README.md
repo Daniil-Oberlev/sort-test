@@ -25,7 +25,7 @@
       <a href='#tech-stack'>
         <img src='https://www.svgrepo.com/show/373819/makefile.svg' width='36' height='36' alt='Makefile'>
       </a>
-      <br>Makefile
+      <br>Make
     </td>
     <td align='center' width='110' height='90'>
       <a href='#tech-stack'>
@@ -68,15 +68,21 @@
   </tr>
 </table>
 
-> Документация
+> Тестирование
 
 <table width='100%'>
   <tr>
     <td align='center' width='110' height='90'>
       <a href='#tech-stack'>
-        <img src='https://www.svgrepo.com/show/373833/mdx.svg' width='36' height='36' alt='MDX'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png' width='36' height='36' alt='Google Benchmark'>
       </a>
-      <br>MDX
+      <br>Google Benchmark
+    </td>
+    <td align='center' width='110' height='90'>
+      <a href='#tech-stack'>
+        <img src='https://images.vexels.com/content/156537/preview/baseball-glove-icon-baseball-icon-8aebf5.png' width='36' height='36' alt='Catch2'>
+      </a>
+      <br>Catch2
     </td>
   </tr>
 </table>
@@ -117,6 +123,36 @@
    ./sort
    ```
 
+## 📂 Структура
+
+Вот структура проекта с описанием основных компонентов:
+
+```bash
+├── .github                     # CI/CD конфигурации
+├── .vscode                     # Настройки Visual Studio Code
+├── benchmarks                  # Папка с файлами для бенчмаркинга алгоритмов
+├── bin                         # Скомпилированные исполняемые файлы
+│   ├── benchmark
+│   └── test
+├── docs                        # Документация по каждому алгоритму
+├── include                     # Заголовочные файлы
+├── libs                        # Библиотеки
+│   ├── catch2
+│   └── benchmark
+├── src                         # Исходные файлы с реализацией алгоритмов сортировок
+│   ├── bogo.sort.cpp
+│   ├── quick.sort.cpp
+│   └── ...
+├── tests                       # Папка с тестами
+│   ├── bogo.sort.test.cpp
+│   ├── quick.sort.test.cpp
+│   └── ...
+├── config.env                  # Конфигурационный файл окружения
+├── Dockerfile                  # Dockerfile для контейнеризации
+├── Makefile                    # Makefile для сборки проекта
+└── shell.nix                   # Конфигурации для Nix
+```
+
 ## 🔍 Использование
 
 Вы можете использовать любую из реализованных функций сортировки, подключив соответствующий заголовочный файл и вызвав нужную функцию в вашем коде. Например:
@@ -149,5 +185,3 @@ int main() {
 ## 🤝 Вклад в проект
 
 Если вы хотите внести свой вклад в проект, пожалуйста, создайте новый pull request или откройте issue для обсуждения изменений.
-
-[![codecov](https://codecov.io/gh/Daniil-Oberlev/sort-test/graph/badge.svg?token=ARS4LZ589I)](https://codecov.io/gh/Daniil-Oberlev/sort-test)

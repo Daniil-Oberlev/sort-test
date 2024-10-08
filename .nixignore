@@ -8,4 +8,4 @@ Dockerfile
 LICENSE
 README.md
 
-\*.log
+.log

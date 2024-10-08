@@ -1,5 +1,5 @@
 #include "../include/quick.sort.h"
-#include "../lib/catch2/catch.hpp"
+#include "../libs/catch2/catch.hpp"
 #include <vector>
 
 TEST_CASE("Тесты быстрой сортировки") {
